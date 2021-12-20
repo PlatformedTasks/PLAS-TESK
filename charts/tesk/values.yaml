@@ -18,7 +18,7 @@ tesk:
     #tes_api_base_path:
     # For backwards compatibility with TES 0.3 - old base bath
     tes_api_base_path: /v1
-    image: platformedtasks/plas-taskmaster:latest
+    image: platformedtasks/plas-tesk-api:latest
     port: 8080
     #taskmaster_image_version: v0.10.0
     taskmaster_image_version: latest
