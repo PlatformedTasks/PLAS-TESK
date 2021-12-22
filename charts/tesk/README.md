@@ -1,10 +1,8 @@
-# Instruction to deploy PLAS TESK
+# Deployment of PLAS TESK
 
 This directory contains the chart file to deploy the PLAS extension of TESK service. Tested with Helm v3.6.3.
 
 For more information see the [README](https://github.com/elixir-cloud-aai/TESK/blob/master/charts/tesk/README.md) on the original TESK
-
-## Deployment
 
 Since this is a helm chart, you must check that you have Helm installed.
 
