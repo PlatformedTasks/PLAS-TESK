@@ -4,7 +4,7 @@ This directory contains the chart file to deploy the PLAS extension of TESK serv
 
 For more information see the [README](https://github.com/elixir-cloud-aai/TESK/blob/master/charts/tesk/README.md) on the original TESK
 
-Since this is a helm chart, you must check that you have Helm installed.
+Note: check if you have Helm correctly installed.
 
 To deploy the application:
 * Edit the [`values.yaml`](values.yaml) according to your configuration.
