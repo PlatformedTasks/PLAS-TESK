@@ -8,10 +8,10 @@ Since this is a helm chart, you must check that you have Helm installed.
 
 To deploy the application:
 * Edit the [`values.yaml`](values.yaml) according to your configuration.
-* For the storage you can choose between three options:
+* The storage was used to save the input and output files used by the task, you can choose between three options:
   1. **openstack** 
   2. **s3:** to use s3 storage add the necessary `config` and `credentials` files to the **s3-config** (*charts/tesk/s3-config*) folder.
-  3. **mystorage:** if you decide to use a custom storage class with an FTP storage backend, you need to create a `secrets.yaml` file with the  `username` and `password` of the ftp account
+  3. **mystorage:** if you decide to use a custom storage class with an FTP storage backend, you need to create a `secrets.yaml` file with the  `username` and `password` of the ftp account. (We have chosen and tested this solution)
 ```
  ftp:
    username: <username>
