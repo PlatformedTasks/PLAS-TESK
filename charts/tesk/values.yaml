@@ -2,13 +2,11 @@
 # This is a YAML-formatted file.
 # Declare variables to be passed into your templates.
 
-# host_name: tes.tsi.ebi.ac.uk
 host_name: "10.0.0.10"
 # There are two options here: "openshift" or "kubernetes"
 clusterType: kubernetes
-#
-#
-#
+
+
 
 # 'openstack' or 's3' or 'mystorage'
 storage: mystorage
@@ -20,7 +18,6 @@ tesk:
     tes_api_base_path: /v1
     image: platformedtasks/plas-tesk-api:latest
     port: 8080
-    #taskmaster_image_version: v0.10.0
     taskmaster_image_version: latest
     taskmaster_filer_image_version: v0.10.0
     debug: false
@@ -31,14 +28,8 @@ transfer:
     # If you want local file systems support (i.e. 'file:' urls in inputs and outputs),
     # you have to define these 2 properties.
     active: true
-
-    # wes_base_path: '/data'      # WesElixir via docker-compose
-
-    #Commentati per provare il pvc, prima usava solo ftp
-    #wes_base_path: '/home/ludo/GEANT/geant-old/cwl-example-workflows/'
     wes_base_path: '/tmp'         # WesElixir locally
     tes_base_path: '/transfer'    # Change the value of $wesBasePath in minikubeStart accordingly
-    
     pvc_name: 'transfer-pvc'
 
 auth:
@@ -54,17 +45,12 @@ service:
     # use:
     # - NodePort, if you want to expose API directly
     # - LoadBalancer for cloud provider (gcloud) or empty otherwise
-    #type: NodePort
-    #node_port: 31567
     type: "NodePort"
     node_port: "31567"
 
 ftp:
     # If you need FTP configuration, choose one of the 2 methods of providing credentials
-    #classic_ftp_secret: ftp-secret
-    #netrc_secret: ftp-secret
     classic_ftp_secret: ftp-secret
-    #netrc_secret: netrc-secret
     # If you install FTP locally, but outside of k8s and need a DNS entry for it (because your workflow manager might not like the IP address)
     # one way of getting a DNS entry for your FTP service is to use a k8s "service without a selector"
     # Put the IP under which your pods see see services running on your host (differs depending on the way you installes K8s)
