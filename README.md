@@ -1,13 +1,35 @@
-# README
+# PLAS TESK
 
-This is the repository of the PLAS extension based on TESK. For the official documentation head over the [TESK repository](https://github.com/elixir-cloud-aai/TESK).
-
-We recall the official TESK requirements:
-- A working Kubernetes cluster version 1.9 and later.
-- If you want TESK to handle tasks with I/O (and you probably want), you additionally need:
-- A default storage class, which TESK will use to create temporary PVCs. It is enough that the storage class supports the RWO mode.
-- And, if you want TESK to integrate with workflow managers, you additionally need either an FTP account or a PVC that can be accessed from within or from outside of the cluster by the workflow manager (more in the [TESK deployment page](https://github.com/elixir-cloud-aai/TESK/blob/master/documentation/deployment_new.md)).
+This is the repository of the PLAS extention of TESK. For the official documentation head over the [TESK repository](https://github.com/elixir-cloud-aai/TESK).
 
 ![PLAS extension](src/tesk-plas.png)
 
-With the PLAS extention 
+## Requirements
+1. A Kubernetes cluster with version >= v1.21 installed
+2. [Helm](https://helm.sh/docs/intro/install/) version >= 3 installed
+3. NFS provisioner, follow the steps from the [PLAS Documentation](https://github.com/PlatformedTasks/Documentation/blob/main/configure_plas_testbed.md)
+4. FTP server installed 
+   
+## Steps
+1. Clone this repository and change directory
+
+```console
+$ git clone https://github.com/PlatformedTasks/PLAS-TESK.git
+$ cd PLAS-TESK/charts/tesk/
+```
+
+2. Since we are going to install PLAS-TESK as an Helm chart, edit the `values.yaml` file to match your configurations. 
+From the original [TESK chart](https://github.com/elixir-cloud-aai/TESK) we have added the option `storage: mystorage` which will deploy an NFS provisioner to the Kubernetes cluster called `example.com/nfs`.
+3. Create a `secrets.yaml`  file with the FTP credentials:
+
+```yaml
+ftp:
+  username: <username>
+  password: <password>
+```
+
+4. Finally, install the PLAS-TESK-API using Helm:
+
+```console
+helm install plas-tesk-api . -f secrets.yaml -f values.yaml
+```
