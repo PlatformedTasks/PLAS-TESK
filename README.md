@@ -4,6 +4,11 @@ In this repository, you can find the instructions to install PLAS-TESK, an exten
 
 PLAS-TESK is an element of the [PLAS project](https://github.com/PlatformedTasks/Documentation) funded by the [GÉANT Innovation Programme](https://community.geant.org/community-programme-portfolio/innovation-programme/) initiative to extend the [GÉANT Cloud Flow (GCF)](https://clouds.geant.org/community-cloud/) to be capable of performing platformed-tasks in the cloud.
 
+The PLAS-TESK project is composed of two parts:
+* [PLAS-tesk-api](https://github.com/PlatformedTasks/PLAS-tesk-api): includes the service that implements the TES API and translates tasks into Kubernetes batch calls
+* [PLAS-tesk-core](https://github.com/PlatformedTasks/PLAS-tesk-core): includes the code of the image of the taskmaster that is run as a container into the Kubernetes cluster by the TESK-API
+
+In this README we show how to install the TESK-API using helm
 
 ![PLAS extension](src/tesk-plas.png)
 
