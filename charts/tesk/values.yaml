@@ -2,18 +2,15 @@
 # This is a YAML-formatted file.
 # Declare variables to be passed into your templates.
 
-host_name: "10.0.0.10"
+host_name: "10.0.0.10" # FQDN to expose the application, we use the master-node IP address
 # There are two options here: "openshift" or "kubernetes"
 clusterType: kubernetes
-
-
 
 # 'openstack' or 's3' or 'mystorage'
 storage: mystorage
 
 tesk:
-    # if empty - default base path; currently /ga4gh/tes/v1
-    #tes_api_base_path:
+    # if empty - default base path
     # For backwards compatibility with TES 0.3 - old base bath
     tes_api_base_path: /v1
     image: platformedtasks/plas-tesk-api:latest
@@ -28,8 +25,8 @@ transfer:
     # If you want local file systems support (i.e. 'file:' urls in inputs and outputs),
     # you have to define these 2 properties.
     active: true
-    wes_base_path: '/tmp'         # WesElixir locally
-    tes_base_path: '/transfer'    # Change the value of $wesBasePath in minikubeStart accordingly
+    wes_base_path: '/tmp'
+    tes_base_path: '/transfer'
     pvc_name: 'transfer-pvc'
 
 auth:
