@@ -10,7 +10,7 @@ The PLAS-TESK project is composed of two parts:
 * [PLAS-tesk-api](https://github.com/PlatformedTasks/PLAS-tesk-api): includes the service that implements the TES API and translates tasks into Kubernetes batch calls
 * [PLAS-tesk-core](https://github.com/PlatformedTasks/PLAS-tesk-core): includes the code of the image of the taskmaster that is run as a container into the Kubernetes cluster by the TESK-API
 
-In this README we show how to install the TESK-API using helm
+In this README we show how to install the TESK-API using Helm
 
 ![PLAS extension](src/tesk-plas.png)
 
@@ -29,7 +29,7 @@ $ cd PLAS-charts/charts/tesk
 ```
 
 2. Since we are going to install PLAS-TESK as a Helm chart, edit the `values.yaml` file to match your configurations. 
-From the original [TESK chart](https://github.com/elixir-cloud-aai/TESK) we have added the option `storage: mystorage` which will deploy an NFS provisioner to the Kubernetes cluster called `example.com/nfs`.
+From the original [TESK chart](https://github.com/elixir-cloud-aai/TESK) we have added the option `storage: mystorage` which will deploy a StorageClass to the Kubernetes cluster called `example.com/nfs`.
 3. Create a `secrets.yaml`  file with the FTP credentials:
 
 ```yaml
