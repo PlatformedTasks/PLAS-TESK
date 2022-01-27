@@ -1,6 +1,8 @@
 # PLAS TESK
 
-In this repository, you can find the instructions to install PLAS-TESK, an extension of the original [TESK](https://github.com/elixir-cloud-aai/TESK).
+In this repository, you can find the instructions to install with Helm PLAS-TESK, an extension of the original [TESK](https://github.com/elixir-cloud-aai/TESK).
+The Helm charts for the PLAS project can be found [here](https://github.com/PlatformedTasks/PLAS-charts).
+
 
 PLAS-TESK is an element of the [PLAS project](https://github.com/PlatformedTasks/Documentation) funded by the [GÉANT Innovation Programme](https://community.geant.org/community-programme-portfolio/innovation-programme/) initiative to extend the [GÉANT Cloud Flow (GCF)](https://clouds.geant.org/community-cloud/) to be capable of performing platformed-tasks in the cloud.
 
@@ -19,11 +21,11 @@ In this README we show how to install the TESK-API using helm
 4. FTP server installed 
    
 ## Quickstart
-1. Clone this repository and change directory
+1. Clone the repository with the Helm chart:
 
 ```console
-$ git clone https://github.com/PlatformedTasks/PLAS-TESK.git
-$ cd PLAS-TESK/charts/tesk/
+$ git clone https://github.com/PlatformedTasks/PLAS-charts.git
+$ cd PLAS-charts/charts/tesk
 ```
 
 2. Since we are going to install PLAS-TESK as a Helm chart, edit the `values.yaml` file to match your configurations. 
